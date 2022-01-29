@@ -1,0 +1,123 @@
+<h1>Hero List</h1>
+<h2>Add Task</h2>
+<p>test works!</p>
+<style>
+fontstyle1{
+    font-family: 'Brush Script MT', cursive;
+  }
+</style>
+
+
+
+
+<input type='text' #idbox placeholder="Id" />
+<input type='text' #namebox placeholder="Task" />
+<input type='text' #prioritybox placeholder="Priority" />
+<button mat-raised-button (click)="save(idbox.value,namebox.value,prioritybox.value)" (click)="namebox.value=''" (click)="prioritybox.value=''" (click)="idbox.value=''" >Save</button>
+<h2></h2>
+<div>
+    <input matInput placeholder #completedTaskbox placeholder="Completed Task Id" />
+    <button mat-raised-button (click)="completedTask(completedTaskbox.value)"  (click)="completedTaskbox.value=''" >Completed Task</button>
+</div>
+<div>
+    <h2></h2>
+    <button mat-stroked-button color="primary" (click)="getHeroes()"> Refresh</button>
+</div>
+
+<span  id="menu">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport box">
+    <ul   class="heroes">
+        
+        <li *ngFor="let hero of heroes" >
+    
+            <span class="badge">{{hero.id}}</span>{{hero.name}}
+    
+    
+        </li>
+    
+    </ul>
+    
+</cdk-virtual-scroll-viewport>
+</span>
+
+<span>
+    <cdk-virtual-scroll-viewport  id="menu" itemSize="50" class="example-viewport box"  >
+        <ul  class="heroes">
+            <li><span class="badge">|1|</span><b>Important Tasks</b></li>
+            <li id="menu" *ngFor="let hero of priority_1_task" >
+            
+                <span class="badge">{{hero.id}}</span>{{hero.name}}
+        
+            </li>
+        
+        </ul>
+        
+    </cdk-virtual-scroll-viewport>  
+
+</span>
+
+<span>
+    <cdk-virtual-scroll-viewport  id="menu" itemSize="50" class="example-viewport box"  >
+        <ul  class="heroes">
+            <li><span class="badge">|2|</span><b>Regular Tasks</b></li>
+            <li id="menu" *ngFor="let hero of priority_2_task" >
+            
+                <span class="badge">{{hero.id}}</span>{{hero.name}}
+        
+            </li>
+        
+        </ul>
+        
+    </cdk-virtual-scroll-viewport>  
+
+</span>
+<span>
+    <cdk-virtual-scroll-viewport  id="menu" itemSize="50" class="example-viewport box"  >
+        <ul  class="heroes">
+            <li><span class="badge">|3|</span><b>Free Time Tasks</b></li>
+            <li id="menu" *ngFor="let hero of priority_3_task" >
+            
+                <span class="badge">{{hero.id}}</span>{{hero.name}}
+        
+            </li>
+        
+        </ul>
+        
+    </cdk-virtual-scroll-viewport>  
+
+</span>
+<span>
+    <cdk-virtual-scroll-viewport  id="menu" itemSize="50" class="example-viewport box"  >
+        <ul  class="heroes">
+            <li><span class="badge">|4|</span><b> WeekEnd Tasks </b></li>
+            <li id="menu" *ngFor="let hero of priority_4_task" >
+            
+                <span class="badge">{{hero.id}}</span>{{hero.name}}
+        
+            </li>
+        
+        </ul>
+        
+    </cdk-virtual-scroll-viewport>  
+
+</span>
+<h1></h1>
+
+<div>
+ 
+    <input matInput placeholder #skipTaskbox placeholder="Remove Task Id" />
+    <button mat-raised-button (click)="skipTask(skipTaskbox.value)"  (click)="skipTaskbox.value=''" >Skip Task</button>
+</div>
+<h1></h1>
+<div>
+ 
+    <input matInput placeholder #removedTaskbox placeholder="Remove Task Id" />
+    <button mat-raised-button (click)="removeTask(removedTaskbox.value)" (click)="removedTaskbox.value=''" >Remove</button>
+</div>
+
+
+
+<footer>
+    <h2>Footer</h2>
+    <h3>...!</h3>
+</footer>
